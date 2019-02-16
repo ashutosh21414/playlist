@@ -19,7 +19,7 @@ exports.saveVideos = async function(req,res){
 exports.fetchVideo = async function(req,res){
     try{
       let video = await videos.findOne({_id:mongoose.Types.ObjectId(req.params.id)}).lean();
-      res.json({success:true,data:video});
+      res.json({success:true,data:(video?video:'not found')});
     }
     catch(e){
         console.log(e);

@@ -19,7 +19,7 @@ exports.savePlaylist = async function(req,res){
 exports.fetchPlaylist = async function(req,res){
     try{
       let pl = await playlist.findOne({_id:mongoose.Types.ObjectId(req.params.id)}).lean();
-      res.json({success:true,data:pl});
+      res.json({success:true,data:(pl?pl:'not found')});
     }
     catch(e){
         console.log(e);
@@ -45,7 +45,7 @@ exports.shufflePlaylist = async function(req,res){
       let pl = await playlist.findOne({_id:mongoose.Types.ObjectId(req.params.id)});
       pl.videos = shuffle(pl.videos);
       await pl.save()
-      res.json({success:true,data:pl});
+      res.json({success:true,data:(pl?pl:'not found')});
     }
     catch(e){
         console.log(e);
