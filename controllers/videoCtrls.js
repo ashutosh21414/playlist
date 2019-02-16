@@ -29,7 +29,7 @@ exports.fetchVideo = async function(req,res){
 
 
 exports.deleteVideo = async function(req,res){
-    try{
+      try{
         let video = await videos.deleteOne({_id:mongoose.Types.ObjectId(req.params.id)}).lean();
         res.json({success:true,data:video});
       }

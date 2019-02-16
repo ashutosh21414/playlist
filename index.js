@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
 //Routes
-var VideoHandlers = require('./routes') 
+var routeHandler = require('./routes') 
 
 
 //Mongoose Setup
@@ -34,7 +34,7 @@ app.use(bodyParser.json({
     limit: "50mb"
 }));
 
-app.use('/api',VideoHandlers);
+app.use('/api',routeHandler);
 
 
 

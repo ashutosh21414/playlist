@@ -20,7 +20,7 @@ var videoSchema = new mongoose.Schema({
     },
 }, { versionKey: false });
 
-var video = mongoose.model('Videos', videoSchema);
+var video = mongoose.model('Video', videoSchema);
 
 module.exports = video;
 
