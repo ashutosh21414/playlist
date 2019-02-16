@@ -1,9 +1,5 @@
-Hello,
-I am submitting my work, please let me know if there are any changes you want me to make.
 
-Git Repository
-
-To run the code please follow the following steps.
+# To run the code please follow the following steps.
 1. git clone https://github.com/ashutosh21414/playlist.git
 2. npm i
 3. node index.js
